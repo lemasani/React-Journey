@@ -54,11 +54,12 @@ togglePersonHandler = () =>{
 
   render(){
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       borderRadius: '4px',
-      padding: '5px',
+      padding: '10px',
       cursor: 'pointer'
     }
 
@@ -77,27 +78,28 @@ togglePersonHandler = () =>{
                />
             )
           })}
-        {/* <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age}
-          />
-        <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age} 
-          click={this.switchNameHandler.bind(this, 'Maz')} 
-        changed={this.nameChangeHandler}> My Hobbies: Drawing </ Person>
-        <Person 
-          name={this.state.persons[2].name} 
-          age={this.state.persons[2].age} /> */}
+       
 
       </div> 
       )
+      style.backgroundColor = 'red'
+     
+    }
+
+    let classes = []
+    if(this.state.persons.length <= 2){
+      classes.push('red') // classes = ['red']
+    }
+    if(this.state.persons.length <= 1){
+      classes.push('bold') // classes = ['red' ,'bold']
     }
 
   return (
+    
+
     <div className='App'>
       <h1>Hi, I am a React app</h1>
-      <p>This is really working</p>
+      <p className={classes.join(' ')}>This is really working</p>
       <button 
         style={style}
         onClick={this.togglePersonHandler}>Toggle Persons
