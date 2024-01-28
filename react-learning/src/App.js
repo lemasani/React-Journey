@@ -96,7 +96,7 @@ togglePersonHandler = () =>{
 
   return (
     
-
+    
     <div className='App'>
       <h1>Hi, I am a React app</h1>
       <p className={classes.join(' ')}>This is really working</p>
@@ -107,6 +107,7 @@ togglePersonHandler = () =>{
     
         {persons}       
     </div>
+    
   );
   }
 }
